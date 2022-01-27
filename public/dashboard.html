@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="showData()">
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span>Dashboard</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)"><span class="fas fa-cogs"></span>
+                    <span>Settins</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="fas fa-sign-out-alt"></span>
+                    <span onclick="logout()">Logout</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                </label>
+                Dashboard
+            </h2>
+            <div class="user-wrapper">
+                <div>
+                    <h4 id="email"></h4>
+                    <!-- <small>Super Admin</small> -->
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="cards">
+                
+            </div>
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card-header">
+                        <h2>User Data</h2>
+                    </div>
+                    <div class="card-body">
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>Password</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="u_email"></td>
+                                    <td id="u_pass"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="app.js"></script>
+<script>
+    localStorage.getItem('loginUser') === null ? window.location.replace("./index.html") : '';
+</script>
+</html>
